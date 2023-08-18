@@ -40,5 +40,5 @@ def down(message):
      	bot.delete_message(chat_id=chat_id, message_id=brok.message_id)
      	bot.send_video(chat_id, result, reply_to_message_id=message.message_id)
 
-## @BRoK8 & @Crrazy_8
+
 bot.infinity_polling()
