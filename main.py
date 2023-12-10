@@ -29,3 +29,4 @@ async def upd_name(event):
 
 client.start()
 client.run_until_disconnected()
+
