@@ -19,13 +19,13 @@ def set_bio(message):
         mm = str(now.month)
         dd = str(now.day)
         yyyy = str(now.year)
-        hour = str(divmod(now.hour, 24))
+        hour = str(divmod(now.hour, 24))[1]
         mi = str(now.minute)
         t=(mm+"/"+dd+"/" +yyyy)
         
         iraq_time = datetime.now()
         
-        hours = divmod(iraq_time.hour, 12)[1]
+        hours = divmod(iraq_time.hour, 24)[1]
         bio = f"\r{hours}:{iraq_time.strftime('%M')}"
         print(bio)
         
