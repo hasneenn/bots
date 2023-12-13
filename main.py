@@ -23,7 +23,7 @@ def set_bio(message):
         
         now = datetime.now()
         u = divmod(now.hour, 12)[1]
-        bio = now.strftime(f"%{u}:%M : love🥀")
+        bio = now.strftime(f"{u}:%M : [ HSO ]")
         print(bio)
         
         print(t)
