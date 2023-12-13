@@ -3,7 +3,8 @@ import datetime
 import time
 from datetime import datetime
 
-TOKEN = '6360026923:AAG7TPuytmsBl9OpW6LbY96KVKAxN8jyd9E'
+TOKEN = '6918500717:AAE44P-6z7gDuDEVH-CrDVXRe2xJVoYW53k'
+
 bot = telebot.TeleBot(TOKEN)
 @bot.message_handler(commands=['start'])
 def start(message):
@@ -21,14 +22,17 @@ def set_bio(message):
         mi = str(now.minute)
         t=(mm+"/"+dd+"/" +yyyy)
         
-        now = datetime.now()
-        u = divmod(now.hour, 12)[1]
-        bio = now.strftime(f"{u}:%M : [ HSO ]")
+        iraq_time = datetime.now()
+        
+        hours = divmod(iraq_time.hour, 12)[1]
+        
+        bio = f"\r{hours}:{iraq_time.strftime('%M')}"
         print(bio)
         
         print(t)
         
-        bot.set_chat_description(message.chat.id, t+' '+bio)
+        bot.set_chat_description(message.chat.id, t+' '+bio+' [ 𝐋𝐎𝐕𝐄 🥀]')
+        
         time.sleep(60)
      
      
