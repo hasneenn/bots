@@ -19,7 +19,7 @@ def set_bio(message):
         mm = str(now.month)
         dd = str(now.day)
         yyyy = str(now.year)
-        hour = str(divmod(now.hour, 24)[1])
+        hour = str(divmod(now.hour, 24))
         mi = str(now.minute)
         t=(mm+"/"+dd+"/" +yyyy)
         
