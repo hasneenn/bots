@@ -19,6 +19,7 @@ def set_bio(message):
         current_time =datetime.now(tz=iraq_timezone)
         formatted_time = current_time.strftime("%Y-%m-%d %H:%M")
         bot.set_chat_description(message.chat.id, formatted_time)
+        time.sleep(60)
      
      
 bot.polling()
