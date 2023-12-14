@@ -21,5 +21,15 @@ def set_bio(message):
         bot.set_chat_description(message.chat.id, formatted_time)
         time.sleep(60)
      
-     
-bot.polling()
+
+
+
+def lo():
+    while True:
+        try:
+            bot.polling(True)
+        except: pass
+        lo()
+    lo()
+lo()
+    
