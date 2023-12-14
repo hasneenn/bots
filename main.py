@@ -2,6 +2,7 @@ import telebot
 import datetime
 import time
 from datetime import datetime
+import pytz
 
 TOKEN = '6360026923:AAG7TPuytmsBl9OpW6LbY96KVKAxN8jyd9E'
 
@@ -14,15 +15,10 @@ def set_bio(message):
     
     bot.reply_to(message, 'تم تحديد ساعة البايو بنجاح.')
     while True:
-        now = datetime.now()
-        mm = str(now.month)
-        dd = str(now.day)
-        yyyy = str(now.year)
-        hour = str(now.hour)
-        mi = str(now.minute)
-        ss = str(now.second)
-        t=(mm + "/" + dd + "/" + yyyy + " " + hour + ":" + mi + " [ 𝑯 ] ")
-        bot.set_chat_description(message.chat.id, t)
+        iraq_timezone = pytz.timezone("Asia/Baghdad")
+        current_time =datetime.now(tz=iraq_timezone)
+        formatted_time = current_time.strftime("%Y-%m-%d %H:%M")
+        bot.set_chat_description(message.chat.id, formatted_time)
      
      
 bot.polling()
