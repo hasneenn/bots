@@ -11,15 +11,15 @@
 	"repository": "https://github.com/Source-Ze/Temp-Mail",
     "env": {
         "TG_BOT_TOKEN": {
-            "description": "Your Telegram Bot Token from @BotFather",
+            "description": "هنا خلي توكن بوتك حتى تنصب لبوت ",
             "value": ""
         },
         "API_HASH": {
-            "description": "Your API Hash from my.telegram.org",
+            "description": "خليه فارغه عادي ",
             "value": ""
         },
         "APP_ID": {
-            "description": "Your APP ID from my.telegram.org",
+            "description": "خليه فارغه عادي",
             "value": ""
 	   }
 	},
