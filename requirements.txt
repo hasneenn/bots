@@ -20,6 +20,5 @@ telethon
 uptime
 speedtest-cli
 pytube
-pyTelegramBotAPI
 random
 
