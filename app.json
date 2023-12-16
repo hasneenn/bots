@@ -1,5 +1,5 @@
 {
-	"name": "ZE STRING SESSION",
+	"name": "Hasneen Ali",
 	"description": "تنصيب بوت بحث من يوتيوب ",
 	"logo": "https://telegra.ph/file/b7eb586e44b8cbf93bfad.jpg",
 	"keywords": [
@@ -13,8 +13,16 @@
         "TG_BOT_TOKEN": {
             "description": "Your Telegram Bot Token from @BotFather",
             "value": ""
+        },
+        "API_HASH": {
+            "description": "Your API Hash from my.telegram.org",
+            "value": ""
+        },
+        "APP_ID": {
+            "description": "Your APP ID from my.telegram.org",
+            "value": ""
+	   }
 	},
-	    }
 	"buildpacks": [
 		{
 			"url": "heroku/python"
