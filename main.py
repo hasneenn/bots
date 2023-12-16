@@ -4,7 +4,7 @@ import telebot
 import requests, random
 import os
 
-token = Config.TG_BOT_TOKEN
+token ='6789262419:AAFdsXvr0ijFWx3TLnkkj1RDhNHVCAl0DfM'
 
 bot = telebot.TeleBot(token)
 
