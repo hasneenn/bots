@@ -1,1 +1,1 @@
-worker: python3 ELHYBA.py
+worker python3 main.py
