@@ -1,35 +1,68 @@
+from pytube import YouTube
+from telebot import types
 import telebot
-import datetime
-import time
-from datetime import datetime
-import pytz
+import requests, random
+import os
 
-TOKEN = '6360026923:AAG7TPuytmsBl9OpW6LbY96KVKAxN8jyd9E'
+token = Config.TG_BOT_TOKEN
 
-bot = telebot.TeleBot(TOKEN)
+bot = telebot.TeleBot(token)
+
+bot.set_my_commands([telebot.types.BotCommand("/start", " 🤖 𝗦𝗧𝗔𝗥𝗧 𝗕𝗢𝗧 ")])
+
 @bot.message_handler(commands=['start'])
-def start(message):
-    bot.reply_to(message, 'مرحبًا بك قوم برفع البوت مشرف في الگروب وارسل امر bio/ في الگروب')
-@bot.message_handler(commands=['bio'])
-def set_bio(message):
+def start_fun(message):
+    id1 = str(message.from_user.id)
     
-    bot.reply_to(message, 'تم تحديد ساعة البايو بنجاح.')
-    while True:
-        iraq_timezone = pytz.timezone("Asia/Baghdad")
-        current_time =datetime.now(tz=iraq_timezone)
-        formatted_time = current_time.strftime("%Y-%m-%d %H:%M")
-        bot.set_chat_description(message.chat.id, formatted_time)
-        time.sleep(60)
+    
+    bot.reply_to(message,'*ارسل اسم الفلم او الاغنية او اي شيء للبحث في اليوتيوب*',parse_mode='markdown')
+
+@bot.message_handler(func=lambda message: True)
+def search_fun(message):
+    text = message.text
+    
+    rr = f"https://www.youtube.com/results?search_query={text}"
+    u = requests.get(rr).text
+    
+    r = u.split('/watch?v=')[1].split('"')[0]
+    mo = f"https://www.youtube.com/watch?v={r}"
+    uo = mo.split("u0")[0]
+    video_url = uo
+    yt = YouTube(video_url)
+    video = yt.streams.first()
+    video.download()
+
+    
+    filem = video.default_filename
      
-
-
-
-def lo():
-    while True:
-        try:
-            bot.polling(True)
-        except: pass
-        lo()
-    lo()
-lo()
+    ki='wertuiosazxcvn'
     
+    uo = str(''.join(random.choice(ki)for ii in range(7)))
+       
+    namenew = f'{uo}.mp4'
+    os.rename(filem, namenew)
+    bot.send_video(message.chat.id,video=open(f'{uo}.mp4','rb'),caption='*Done Download\nDev : @llxxx3*',parse_mode='markdown')
+    
+    bot.send_audio(message.chat.id,audio=open(f'{uo}.mp4','rb'),caption='*Done Download\nDev : @llxxx3*',parse_mode='markdown')
+    
+    os.remove(f'{uo}.mp4')
+
+
+
+def main():  
+    while True:
+        
+        try:
+            
+            bot.infinity_polling()
+            
+        except:
+            import os
+            os.system('clear')
+            main()
+        
+        main()
+        
+    main()
+    
+main()
