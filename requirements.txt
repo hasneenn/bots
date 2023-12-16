@@ -12,4 +12,14 @@ rich==13.7.0
 tomli==2.0.1
 urllib3==2.1.0
 requests
-pytz
+python-dotenv==0.20.0
+requests
+DateTime
+python-telegram-bot==13.12
+telethon
+uptime
+speedtest-cli
+pytube
+pyTelegramBotAPI
+random
+
