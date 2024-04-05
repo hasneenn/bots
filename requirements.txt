@@ -15,4 +15,5 @@ requests
 python-dotenv==0.20.0
 requests
 python-telegram-bot==13.12
-pytube
+requests
+random
